@@ -88,7 +88,7 @@ def main():
         start_time = time.time()
         maze_no += 1
 
-    print("Total time taken: " + str(time.time() - orig_start))
+    print("Total time taken: " + str(total_time))
 
 if __name__ == "__main__":
     main()
