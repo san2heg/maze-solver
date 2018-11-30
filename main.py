@@ -30,7 +30,7 @@ def dfs_backtrack(token, visited, prev_action):
     print("Current Location ==> " + str(curr_loc))
     visited.add((curr_loc[0], curr_loc[1]))
 
-    directions = ['UP', 'DOWN', 'LEFT', 'RIGHT']
+    directions = ['RIGHT', 'DOWN', 'LEFT', 'UP']
     num_dirs = {
         'UP': (0, -1),
         'DOWN': (0, 1),
@@ -80,15 +80,15 @@ def main():
     total_time = 0
     maze_no = 1
     while state['status'] != 'FINISHED':
-        state = get_maze_state(token)
         solve_maze(token)
         elapsed = time.time() - start_time
         print("=== MAZE " + str(maze_no) + " SOLVED IN " + str(elapsed) + " ===")
         total_time += elapsed
         start_time = time.time()
         maze_no += 1
+        state = get_maze_state(token)
 
-    print("Total time taken: " + str(total_time))
+    print(str(state['levels_completed']) + " mazes finished! Total time taken: " + str(total_time))
 
 if __name__ == "__main__":
     main()
