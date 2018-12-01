@@ -88,7 +88,7 @@ def main():
         maze_no += 1
         state = get_maze_state(token)
 
-    print(str(state['levels_completed']) + " mazes finished! Total time taken: " + str(total_time))
+    print(str(maze_no) + " mazes finished! Total time taken: " + str(total_time))
 
 if __name__ == "__main__":
     main()
